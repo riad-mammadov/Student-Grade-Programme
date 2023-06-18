@@ -10,19 +10,41 @@
 
 using namespace std;
 
+vector<student> read_students(istream& in) {
+	vector<student> v;
+	string line;
+	while (getline(in, line)) {
+		istringstream line_s(line);
+		string name;
+		double x;
+		if (in >> name >> x) {
+			v.push_back(student(name,x));
+			student& s = v.back();
+			while (in >> x)
+				s.add_task(x);
+		}
+	}
+
+	return v;
+
+
+}
+
 int main() {
 
-	student s1("Bill", 72.5);
-	s1.add_task(34.6);
-	s1.add_task(88.4);
-	student s2("James", 54.6);
-	s2.add_task(43.2);
-	s2.add_task(55.3);
 	vector<student> students;
+
+	student s1("Bill", 34);
+	s1.add_task(45);
+	student s2("Jack", 53);
+	s2.add_task(67);
 	students.push_back(s1);
 	students.push_back(s2);
+
 	for (const auto &s : students)
 	cout << s.name() << ": " << s.mark() << '\n';
+
+	cout << count_if(students.cbegin(), students.cend(), passed) << " students passed \n";
 
 
 
