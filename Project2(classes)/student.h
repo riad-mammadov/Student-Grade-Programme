@@ -29,8 +29,7 @@ private:
 
 };
 
-
-
+bool passed(const student& s);
 
 
 #endif
