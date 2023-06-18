@@ -15,6 +15,8 @@ public:
 	student(const std::string &name, double e) :
 	n(name), exam(e) {}
 
+	void add_task(double m) { tasks.push_back(m); }
+
 	const std::string& name() const{ return n; }
 
 
