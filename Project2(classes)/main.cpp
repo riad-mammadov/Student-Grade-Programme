@@ -15,7 +15,7 @@ int main() {
 	student s("Riad", 72.5);
 	s.add_task(34.6);
 	s.add_task(88.4);
-	cout << s.name() << '\n';
+	cout << s.name() << ": " << s.mark() << '\n';
 
 
 

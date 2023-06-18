@@ -17,11 +17,15 @@ public:
 
 	void add_task(double m);
 
-	const std::string& name() const{ return n; };
+	const std::string& name() const{ return n; }
+
+	double mark() const;
 
 
 
 private:
+	double coursework() const;
+
 
 };
 
