@@ -30,6 +30,17 @@ vector<student> read_students(istream& in) {
 
 }
 
+void print_student(ostream& out, const student& s) {
+
+	streamsize prec = cout.precision();
+	out << s.name() << ": " <<
+		setprecision(3) << s.mark() << setprecision(prec) << '\n';
+			
+
+}
+
+
+
 int main() {
 
 	vector<student> students;
@@ -41,11 +52,9 @@ int main() {
 	students.push_back(s1);
 	students.push_back(s2);
 
-	for (const auto &s : students)
-	cout << s.name() << ": " << s.mark() << '\n';
-
-	cout << count_if(students.cbegin(), students.cend(), passed) << " students passed \n";
-
+	sort(students.begin(), students.end(), compare_marks);
+	for (const auto& s : students)
+		print_student(cout, s);
 
 
 	return 0;

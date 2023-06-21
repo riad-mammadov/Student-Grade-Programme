@@ -2,12 +2,13 @@
 #include "stats.h"
 
 
+
+
 using namespace std;
 
 const double exam_weight = 0.7;
 
 const double pass_mark = 40.0;
-
 
 
 student::student(const std::string& name, double e) :
@@ -30,7 +31,16 @@ double student::coursework() const {
 	return largest;
 			
 		
-	);
+	
+}
+
+
+
+
+
+bool compare_marks(const student& x, const student& y) {
+	return x.mark() > y.mark();
+
 }
 
 bool passed(const student& s) {

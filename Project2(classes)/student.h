@@ -5,6 +5,7 @@
 #include <string>
 
 
+
 class student {
 
 	std::string n;
@@ -28,6 +29,9 @@ private:
 
 
 };
+
+
+bool compare_marks(const student& x, const student& y);
 
 bool passed(const student& s);
 
