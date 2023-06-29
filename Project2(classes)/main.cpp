@@ -43,19 +43,7 @@ void print_student(ostream& out, const student& s) {
 
 int main() {
 
-	vector<student> students;
-
-	student s1("Bill", 34);
-	s1.add_task(45);
-	student s2("Jack", 53);
-	s2.add_task(67);
-	students.push_back(s1);
-	students.push_back(s2);
-
-	sort(students.begin(), students.end(), compare_marks);
-	for (const auto& s : students)
-		print_student(cout, s);
-
+	
 
 	return 0;
 }
